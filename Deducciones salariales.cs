@@ -33,6 +33,7 @@ namespace Deducciones_salariales
                 else if (cr == 3) procenRiesgo = 0.02436;
                 else if (cr == 4) procenRiesgo = 0.04350;
                 else if (cr == 5) procenRiesgo = 0.0696;
+                pension = ibc * 0.16;
                 eps = ibc * 0.125;
                 arl = ibc * procenRiesgo;
                 salarioReal = salarioMensual - pension - eps - arl;
