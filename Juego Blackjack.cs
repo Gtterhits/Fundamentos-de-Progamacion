@@ -30,18 +30,22 @@ namespace Juego_Blackjack
                 Console.WriteLine("Total: " + total);
                 if (total < 21)
                 {
-                    Console.WriteLine("Total: " + total);
                     Console.WriteLine("Desea tomar una carta nueva? s/n");
                     respuesta = Console.ReadLine();
                 }
                 else if (total > 21)
                 {
-                    Console.WriteLine("¡Haz perdido!" + total); respuesta = "n";
+                    Console.WriteLine("\n ¡Haz perdido!"); respuesta = "n";
                 }
                 else
                 {
-                    Console.WriteLine("¡Felicidades haz ganado el juego!"); respuesta = "n";
+                    Console.WriteLine("\n ¡Felicidades haz ganado el juego!"); respuesta = "n";
                 }
+
+            }
+            if (total < 21)
+            {
+                Console.WriteLine("\n ¡Haz perdido!");
             }
         }
     }
