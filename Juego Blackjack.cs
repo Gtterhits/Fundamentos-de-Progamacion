@@ -21,17 +21,27 @@ namespace Juego_Blackjack
             Console.WriteLine("Desea tomar una carta nueva? s/n");
             respuesta = Console.ReadLine();
             
-            while (respuesta == "s")
+            while (respuesta == "s" && total <= 21)
             {
 
                 int nuevaCarta = aleatorio.Next(1, 11);
                 total += nuevaCarta;
                 Console.WriteLine("Su nueva carta es: " + nuevaCarta);
                 Console.WriteLine("Total: " + total);
-
-                Console.WriteLine("Desea tomar una carta nueva? s/n");
-                respuesta = Console.ReadLine();
-                
+                if (total < 21)
+                {
+                    Console.WriteLine("Total: " + total);
+                    Console.WriteLine("Desea tomar una carta nueva? s/n");
+                    respuesta = Console.ReadLine();
+                }
+                else if (total > 21)
+                {
+                    Console.WriteLine("¡Haz perdido!" + total); respuesta = "n";
+                }
+                else
+                {
+                    Console.WriteLine("¡Felicidades haz ganado el juego!"); respuesta = "n";
+                }
             }
         }
     }
